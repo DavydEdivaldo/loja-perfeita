@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './componentes/Login';
 import DashboardSupervisor from './componentes/DashboardSupervisor';
 import DashboardPromotor from './componentes/DashboardPromotor';
+import Avaliacao from './componentes/Avaliacao';
+
 
 function App() {
   return (
@@ -10,7 +12,10 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/supervisor" element={<DashboardSupervisor />} />
         <Route path="/promotor" element={<DashboardPromotor />} />
-        {/* Se digitar uma rota que não existe, volta pro login */}
+        
+        
+        <Route path="/avaliacao/:lojaId" element={<Avaliacao />} />
+        
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
